@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>love</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      color: #ffffff;
+      font-family: 'Roboto', sans-serif;
+    }
+    .intro-container {
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+    .intro-title {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .enter-button {
+      padding: 15px 30px;
+      font-size: 20px;
+      background: #ffffff;
+      color: #000000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+    .enter-button:hover {
+      background: #000;
+      color: #000000;
+      border: 2px solid #000000;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <audio id="musica" src="midia/The Hills — Outro looped and slowed to perfection.mp3"></audio>
+
+  <img 
+    src="/img/c7214d84426c8645537b14753d1ad5ca.gif" 
+    alt="Botão Entrar" 
+    class="enter-button" 
+    onclick="entrar()" 
+    style="cursor:pointer; width: 200px;"
+  >
+
+  <script>
+    function entrar() {
+      const audio = document.getElementById("musica");
+      audio.play().catch((e) => console.error("Erro ao iniciar som:", e));
+
+      setTimeout(() => {
+        window.location.href = "index.html";
+      },);
+    }
+  </script>
+
+</body>
+</html>
